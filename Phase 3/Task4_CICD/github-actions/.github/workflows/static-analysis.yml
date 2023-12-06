@@ -1,0 +1,16 @@
+name: Static Analysis
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Semgrep Action
+      uses: returntocorp/semgrep-action@v1
